@@ -15,6 +15,11 @@ task :console => :environment do
   Pry.start
 end
 
+desc 'require environment'
+task :environment do
+  require_relative './config/environment'
+end
+
 namespace :db do
   desc 'migrate changes to the database'
   task :migrate => :environment do
